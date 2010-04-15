@@ -119,14 +119,14 @@ class TestCase(unittest.TestCase):
     def __call__(self, result=None):
         if result is None: result = self.defaultTestResult()
         result.startTest(self)
-        testMethod = getattr(self, self.__testMethodName)
+        testMethod = getattr(self, self._testMethodName)
         try:
             try:
                 self.setUp()
             except KeyboardInterrupt:
                 raise
             except:
-                result.addError(self, self.__exc_info())
+                result.addError(self, self._exc_info())
                 return
 
             arguments = _generateArguments(testMethod)  # Added code
@@ -136,18 +136,18 @@ class TestCase(unittest.TestCase):
                 testMethod(*arguments)                  # Changed code
                 ok = 1
             except self.failureException:
-                result.addFailure(self, self.__exc_info())
+                result.addFailure(self, self._exc_info())
             except KeyboardInterrupt:
                 raise
             except:
-                result.addError(self, self.__exc_info())
+                result.addError(self, self._exc_info())
 
             try:
                 self.tearDown()
             except KeyboardInterrupt:
                 raise
             except:
-                result.addError(self, self.__exc_info())
+                result.addError(self, self._exc_info())
                 ok = 0
             if ok: result.addSuccess(self)
         finally:
