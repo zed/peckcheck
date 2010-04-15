@@ -1,0 +1,24 @@
+.. This is your project NEWS file which will contain the release notes.
+.. Example: http://www.python.org/download/releases/2.6/NEWS.txt
+.. The content of this file, along with README.rst, will appear in your
+.. project's PyPI page.
+
+News
+====
+
+0.2a1
+-----
+
+*Release date: UNRELEASED*
+
+* registered on pypy
+
+0.1.v2.6
+--------
+
+*Release date: 15-Apr-2010*
+
+* Added support to install via distutils
+
+* Updated for Python 2.6 version
+

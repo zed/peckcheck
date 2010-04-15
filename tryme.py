@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import peckcheck
 from peckcheck import a_list, an_int
 
